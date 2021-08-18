@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get '/start/:name' => 'country#starts_with', as: 'country_starts_with'
 
   # capital of the country
-  get ':name/capital' => 'country#capital', as: 'country_capital'
+  get ':name/cap' => 'country#capital', as: 'country_capital'
 
   # ocation of the country
   get ':name/loc' => 'country#location', as: 'country_location'
@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   # flag of the country
   get ':name/flag' => 'country#flag', as: 'country_flag'
 
-  # countries with this population
+  # countries with less this population
   get 'pop/:nums' => 'country#nums', as: 'country_nums'
 
 end
