@@ -1,8 +1,8 @@
 module Countries
     module V1
         class Client
-            # include HttpStatusCodes
-            # include ApiExceptions
+            include HttpStatusCodes
+            include ApiExceptions
  
             API_ENDPOINT = 'https://restcountries.eu/rest/v2'
             
