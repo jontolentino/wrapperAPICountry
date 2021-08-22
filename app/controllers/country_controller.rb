@@ -28,6 +28,7 @@ class CountryController < ApplicationController
     end
 
     def nums
+        @c = @country.country_nums_less(params[:nums].to_i)
     end
 
     private

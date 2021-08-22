@@ -1,1 +1,4 @@
-<h1>nums population here</h1>
+<h1>Countries that have less than <%= params[:nums] %> in population</h1>
+<% @c.each do |item| %>
+    <p><%= item %></p>
+<% end %>
