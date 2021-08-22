@@ -3,6 +3,11 @@ class CountryController < ApplicationController
 
     def show
         @c = @country.country_show(params[:name])
+
+        respond_to do |format|
+            format.html { @c }
+            format.json { render json: json_format(@c) }
+        end
     end
 
     def starts_with

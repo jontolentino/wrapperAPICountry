@@ -1,4 +1,4 @@
-<h1>Countries that starts with the letter <%= params[:letter] %></h1>
+<h1>Countries that starts with the letter <%= params[:letter].upcase %></h1>
 <% if @c.any? %>
     <% @c.each do |item|  %>
         <p><%= item %></p>
