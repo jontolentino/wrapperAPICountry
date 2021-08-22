@@ -6,11 +6,17 @@ h1{
 p{
     padding: 10px;
     background-color: #bebebe;
-    margin: 5px;
+    margin: 5px 0;
 }
 
 img{
     padding: 10px;
     border: 2px solid #bebebe;
     border-radius: 3px;
+}
+
+.code-p{
+    padding: 10px;
+    background-color: #111111;
+    color: rgb(7, 211, 0);
 }
