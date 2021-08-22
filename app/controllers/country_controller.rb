@@ -20,6 +20,7 @@ class CountryController < ApplicationController
     end
 
     def money
+        @c = @country.country_money(params[:name])
     end
 
     def flag

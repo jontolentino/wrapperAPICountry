@@ -41,7 +41,7 @@ module Countries
 
                 return c[0]["capital"]
             end
-
+            # country location
             def country_location(country_name)
                 c = request(
                     http_method: :get,
@@ -61,14 +61,33 @@ module Countries
                     http_method: :get,
                     endpoint: "name/#{country_name}/")
 
-                # ret = [{
-                #     "region": "#{c[0]["region"]}",
-                #     "subregion": "#{c[0]["subregion"]}"
-                # }]    
-
                 return c[0]["currencies"]
             end
 
+            # country flag
+            def country_flag(country_name)
+                c = request(
+                    http_method: :get,
+                    endpoint: "name/#{country_name}/")
+
+                return c[0]["flag"]
+            end
+
+            # country nums less
+            def country_nums_less(nums)
+                countries_with = []
+                c = request(
+                    http_method: :get,
+                    endpoint: "all/")
+                
+                c.each do |item|
+                    if item['population'] < nums
+                        countries_with.push(item['name'])
+                    end
+                end
+
+                return countries_with
+            end
  
             private
  
