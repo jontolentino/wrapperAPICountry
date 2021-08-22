@@ -55,6 +55,20 @@ module Countries
                 return ret
             end
 
+            # country money
+            def country_money(country_name)
+                c = request(
+                    http_method: :get,
+                    endpoint: "name/#{country_name}/")
+
+                # ret = [{
+                #     "region": "#{c[0]["region"]}",
+                #     "subregion": "#{c[0]["subregion"]}"
+                # }]    
+
+                return c[0]["currencies"]
+            end
+
  
             private
  
