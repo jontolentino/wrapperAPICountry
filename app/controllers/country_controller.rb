@@ -1,6 +1,8 @@
 class CountryController < ApplicationController
 
     def show
+        country = Countries::V1::Client.new()
+        @c = country.country_show(params[:name])
     end
 
     def starts_with

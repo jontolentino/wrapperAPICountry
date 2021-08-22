@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  # name,population and demonym
+  
 
   root to: 'docs#index', as: 'docs_index'
-
+  # name,population and demonym
   get '/:name' => 'country#show', as: 'country_show'
 
   # countries that start with that letter

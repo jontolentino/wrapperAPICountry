@@ -1,1 +1,9 @@
 <h1>Show</h1>
+
+<% @c.each do |item| %>
+    <p><%= item["name"] %></p>
+    <p><%= item["population"] %></p>
+    <p><%= item["demonym"] %></p>
+<% end %>
+
+

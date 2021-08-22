@@ -29,7 +29,7 @@ module Countries
                         countries_with.push(item['name'])
                     end
                 end
-
+                
                 return countries_with
             end
  
