@@ -1,5 +1,8 @@
-<h1>starts with</h1>
-
-<% @c.each do |item|  %>
-    <p><%= item %></p>
+<h1>Countries that starts with the letter <%= params[:letter] %></h1>
+<% if @c.any? %>
+    <% @c.each do |item|  %>
+        <p><%= item %></p>
+    <% end %>
+<% else %>
+    <p>No country starts with that letter</p>
 <% end %>
