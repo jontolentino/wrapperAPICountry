@@ -6,6 +6,8 @@ class CountryController < ApplicationController
     end
 
     def starts_with
+        country = Countries::V1::Client.new()
+        @c = country.country_starts_with(params[:letter])
     end
 
     def capital

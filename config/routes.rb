@@ -2,11 +2,11 @@ Rails.application.routes.draw do
   
 
   root to: 'docs#index', as: 'docs_index'
-  # name,population and demonym
+  # name,population and demonym 
   get '/:name' => 'country#show', as: 'country_show'
 
   # countries that start with that letter
-  get '/start/:name' => 'country#starts_with', as: 'country_starts_with'
+  get '/start/:letter' => 'country#starts_with', as: 'country_starts_with'
 
   # capital of the country
   get ':name/cap' => 'country#capital', as: 'country_capital'
