@@ -10,19 +10,28 @@ module Countries
             def initialize(oauth_token = nil)
                 @oauth_token = oauth_token
             end
- 
+            # for country_show_path
             def country_show(country_name)
                 request(
                     http_method: :get,
                     endpoint: "name/#{country_name}/")
             end
  
-            # def my_repo
-            #     request(
-            # http_method: :get,
-            # endpoint: "user"
-            # )
-            # end
+            # for country_starts_with_path
+            def country_starts_with(letter)
+                countries_with = []
+                c = request(
+                    http_method: :get,
+                    endpoint: "all/")
+                
+                c.each do |item|
+                    if item['name'][0].downcase == letter
+                        countries_with.push(item['name'])
+                    end
+                end
+
+                return countries_with
+            end
  
             private
  
