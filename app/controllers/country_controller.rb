@@ -24,6 +24,7 @@ class CountryController < ApplicationController
     end
 
     def flag
+        @c = @country.country_flag(params[:name])
     end
 
     def nums
