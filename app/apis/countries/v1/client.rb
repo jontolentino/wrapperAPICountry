@@ -29,8 +29,16 @@ module Countries
                         countries_with.push(item['name'])
                     end
                 end
-                
+
                 return countries_with
+            end
+
+            def country_capital(country_name)
+                c = request(
+                    http_method: :get,
+                    endpoint: "name/#{country_name}/")
+                    
+                return c[0]["capital"]
             end
  
             private

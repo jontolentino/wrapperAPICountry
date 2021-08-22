@@ -1,16 +1,17 @@
 class CountryController < ApplicationController
+    before_action :country_new
 
     def show
-        country = Countries::V1::Client.new()
-        @c = country.country_show(params[:name])
+        @c = @country.country_show(params[:name])
     end
 
     def starts_with
         country = Countries::V1::Client.new()
-        @c = country.country_starts_with(params[:letter])
+        @c = @country.country_starts_with(params[:letter])
     end
 
     def capital
+        @c = @country.country_capital(params[:name])
     end
 
     def location
@@ -23,6 +24,12 @@ class CountryController < ApplicationController
     end
 
     def nums
+    end
+
+    private
+
+    def country_new
+        @country = Countries::V1::Client.new()
     end
 
 end
