@@ -33,13 +33,28 @@ module Countries
                 return countries_with
             end
 
+            # for country capital
             def country_capital(country_name)
                 c = request(
                     http_method: :get,
                     endpoint: "name/#{country_name}/")
-                    
+
                 return c[0]["capital"]
             end
+
+            def country_location(country_name)
+                c = request(
+                    http_method: :get,
+                    endpoint: "name/#{country_name}/")
+
+                ret = [{
+                    "region": "#{c[0]["region"]}",
+                    "subregion": "#{c[0]["subregion"]}"
+                }]    
+
+                return ret
+            end
+
  
             private
  

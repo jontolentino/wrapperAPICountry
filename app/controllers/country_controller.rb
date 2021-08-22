@@ -15,6 +15,8 @@ class CountryController < ApplicationController
     end
 
     def location
+        @c = @country.country_location(params[:name])
+        @loc = @c.to_json
     end
 
     def money

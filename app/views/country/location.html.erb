@@ -1,1 +1,7 @@
 <h1>location</h1>
+<% jsonified_loc = JSON.parse(@loc) %>
+<%= params[:name].upcase %>
+<% jsonified_loc.each do |item| %>
+    <p>Region: <%= item["region"] %></p>
+    <p>Subregion: <%= item["subregion"] %></p>
+<% end %>

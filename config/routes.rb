@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   # capital of the country
   get ':name/cap' => 'country#capital', as: 'country_capital'
 
-  # ocation of the country
+  # location of the country
   get ':name/loc' => 'country#location', as: 'country_location'
 
   # data of the currencies of the country
